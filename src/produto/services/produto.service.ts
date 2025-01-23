@@ -37,10 +37,10 @@ export class ProdutoService{
         return produto;
     }
 
-    async findByTitulo(titulo: string): Promise<Produto[]>{
+    async findByNome(nome: string): Promise<Produto[]>{
         return this.produtoRepository.find({
             where: {
-                titulo: ILike(`%${titulo}%`)
+                nome: ILike(`%${nome}%`)
             },
             relations:{
                 categoria: true

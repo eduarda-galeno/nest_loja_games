@@ -12,7 +12,7 @@ export class Produto {
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
     @Column({length: 255, nullable: false})
-    titulo: string;
+    nome: string;
 
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @Column({length: 1000})
@@ -24,9 +24,6 @@ export class Produto {
     @Column({ type: "decimal", precision: 10, scale: 2, transformer: new NumericTransformer() })
     preco: number;
 
-    @Column({default: false})
-    online: boolean
-
     @Column({type: 'int', nullable: true})
     quantidade: number;
 
@@ -34,11 +31,6 @@ export class Produto {
     @IsNotEmpty()
     @Column({length: 50, nullable: false})
     data_lancamento: string;
-
-    @Transform(({ value }: TransformFnParams) => value?.trim())
-    @IsNotEmpty()
-    @Column({length: 50, nullable: false})
-    classificacao_indicativa: string;
 
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()

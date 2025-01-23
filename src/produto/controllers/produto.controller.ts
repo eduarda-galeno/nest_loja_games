@@ -21,10 +21,10 @@ export class ProdutoController{
         return this.produtoService.findById(id);
     }
 
-    @Get('/titulo/:titulo')
+    @Get('/nome/:nome')
     @HttpCode(HttpStatus.OK)
-    findByTitulo(@Param('titulo') titulo: string): Promise<Produto[]>{
-        return this.produtoService.findByTitulo(titulo);
+    findByNome(@Param('nome') nome: string): Promise<Produto[]>{
+        return this.produtoService.findByNome(nome);
     }
 
     @Get('/menor_preco/:preco')
